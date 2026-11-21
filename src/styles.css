@@ -1,1 +1,116 @@
-"Enter your styles here"
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2b2118;
+  background: #f6efe6;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+
+.page__title {
+  margin: 0 0 30px;
+  text-align: center;
+  font-size: 38px;
+  letter-spacing: 2px;
+  color: #8a4b2a;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  min-height: 120px;
+}
+
+.gallery:empty::before {
+  content: "Галерея порожня";
+  grid-column: 1 / -1;
+  text-align: center;
+  align-self: center;
+  font-style: italic;
+  color: #a38b78;
+}
+
+.gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(80, 50, 20, 0.18);
+  transition: transform 0.2s;
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px);
+}
+
+.gallery__img {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: #e8dccd;
+}
+
+.gallery__caption {
+  padding: 10px 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.message {
+  min-height: 24px;
+  margin: 18px 0 0;
+  text-align: center;
+  color: #c0392b;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.controls__btn {
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #fff;
+  background: #8a4b2a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.controls__btn:hover {
+  background: #a85e37;
+}
+
+.controls__btn:active {
+  transform: scale(0.96);
+}
+
+.controls__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controls__btn--danger {
+  background: #5c3a3a;
+}
+
+.controls__btn--danger:hover {
+  background: #7a4a4a;
+}
